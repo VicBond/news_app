@@ -74,6 +74,7 @@ const newsService = (function(){
 //  init selects
 document.addEventListener('DOMContentLoaded', function() {
   M.AutoInit();
+  loadNews();
 });
 
 //load news articles
@@ -85,5 +86,12 @@ function loadNews() {
 // On get response from server
 
 function onGetResponse(err, res) {
-  console.log(res);
+  // console.log(res);
+  renderNews(res.articles);
+};
+
+// render news
+
+function renderNews(news) {
+
 };
