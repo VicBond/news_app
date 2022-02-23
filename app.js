@@ -76,7 +76,10 @@ const form = document.forms['newsControls'];
 const countrySelect = form.elements['country'];
 const searchInput = form.elements['search'];
 
-
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  loadNews();
+});
 
 
 //  init selects
