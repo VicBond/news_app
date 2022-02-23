@@ -109,6 +109,12 @@ function onGetResponse(err, res) {
     showAlert(err, 'error-msg');
     return;
   }
+
+  if (!res.articles.length) {
+    // show empty msg
+    return;
+  }
+
   renderNews(res.articles);
 };
 
@@ -116,6 +122,11 @@ function onGetResponse(err, res) {
 
 function renderNews(news) {
   const newsContainer = document.querySelector('.news-container .row');
+
+  if (newsContainer.children.length){
+    clearContainer(newsContainer);
+  }
+
   let fragment = "";
   news.forEach(newsItem => {
     const el = newsTemplate(newsItem);
@@ -123,6 +134,16 @@ function renderNews(news) {
   });
     // console.log(fragment);
     newsContainer.insertAdjacentHTML('afterbegin', fragment);
+};
+
+function clearContainer(container) {
+  //container.innerHtml = '';
+
+  let child = container.lastElementChild;
+  while (child) {
+    container.removeChild(child);
+    child = container.lastElementChild;
+  }
 };
 
 //news item template 
