@@ -91,6 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
 //load news articles
 
 function loadNews() {
+  showLoader();
   const country = countrySelect.value;
   const searchText = searchInput.value;
 
@@ -172,4 +173,15 @@ function showAlert(msg, type = 'success') {
     html: msg,
     classes: type
    });
+};
+
+function showLoader() {
+  document.body.insertAdjacentHTML(
+    'afterbegin', 
+    `
+    <div class="progress">
+      <div class="indeterminate"></div>
+    </div>
+    `,
+  );
 };
