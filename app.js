@@ -93,5 +93,15 @@ function onGetResponse(err, res) {
 // render news
 
 function renderNews(news) {
+  const newsContainer = document.querySelector('.news-container .row');
+
+  news.forEach(newsItem => {
+    const el = newsTemplate(newsItem);
+  });
+
+};
+
+//news item template 
+function newsTemplate(news) {
 
 };
