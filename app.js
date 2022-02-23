@@ -27,7 +27,7 @@ function customHttp() {
       try {
         const xhr = new XMLHttpRequest();
         xhr.open('POST', url);
-        
+
         xhr.addEventListener('load', () => {
           if (Math.floor(xhr.status / 100) !== 2) {
             cb(`Error. Status code: ${xhr.status}`, xhr);
@@ -56,6 +56,12 @@ function customHttp() {
 }
 // Init http module
 const http = customHttp();
+
+const newsService = (function(){
+  const apiKey = '6ea3047479e84a0fae1613dbc9065178';
+  const apiUrl = 'https://newsapi.org/v2';
+
+})();
 
 //  init selects
 document.addEventListener('DOMContentLoaded', function() {
