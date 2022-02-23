@@ -61,6 +61,14 @@ const newsService = (function(){
   const apiKey = '6ea3047479e84a0fae1613dbc9065178';
   const apiUrl = 'https://newsapi.org/v2';
 
+  return {
+    topHeadlines(country = 'ca', cb) {
+      http.get(`${apiUrl}/top-headlines?country=${country}&apiKey=${apiKey}`);
+    },
+    everything(query, cb) {
+      http.get(`${apiUrl}/everything?q=${query}&apiKey=${apiKey}`);
+    },
+  }
 })();
 
 //  init selects
