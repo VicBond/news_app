@@ -91,7 +91,14 @@ document.addEventListener('DOMContentLoaded', function() {
 //load news articles
 
 function loadNews() {
-  newsService.topHeadlines('ca', onGetResponse)
+  const country = countrySelect.value;
+  const searchText = searchInput.value;
+
+  if (!searchText) {
+    newsService.topHeadlines(country, onGetResponse)
+  } else {
+    newsService.everything(searchText, onGetResponse)
+  };
 };
 
 // On get response from server
