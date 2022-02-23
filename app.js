@@ -99,7 +99,8 @@ function renderNews(news) {
     const el = newsTemplate(newsItem);
     fragment += el;
   });
-    console.log(fragment);
+    // console.log(fragment);
+    newsContainer.insertAdjacentHTML('afterbegin', fragment);
 };
 
 //news item template 
