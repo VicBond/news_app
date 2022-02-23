@@ -75,3 +75,15 @@ const newsService = (function(){
 document.addEventListener('DOMContentLoaded', function() {
   M.AutoInit();
 });
+
+//load news articles
+
+function loadNews() {
+  newsService.topHeadlines('ca', onGetResponse)
+};
+
+// On get response from server
+
+function onGetResponse(err, res) {
+  console.log(res);
+};
