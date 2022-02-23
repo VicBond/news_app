@@ -94,11 +94,12 @@ function onGetResponse(err, res) {
 
 function renderNews(news) {
   const newsContainer = document.querySelector('.news-container .row');
-
+  let fragment = "";
   news.forEach(newsItem => {
     const el = newsTemplate(newsItem);
+    fragment += el;
   });
-
+    console.log(fragment);
 };
 
 //news item template 
