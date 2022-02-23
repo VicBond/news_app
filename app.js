@@ -105,6 +105,7 @@ function loadNews() {
 // On get response from server
 
 function onGetResponse(err, res) {
+  removePreLoader();
   // console.log(res);
   if (err) {
     showAlert(err, 'error-msg');
@@ -185,3 +186,12 @@ function showLoader() {
     `,
   );
 };
+
+//remove loader func
+
+function removePreLoader() {
+  const loader = document.querySelector('.progress');
+  if (loader) {
+    loader.remove();
+  }
+}
