@@ -63,10 +63,10 @@ const newsService = (function(){
 
   return {
     topHeadlines(country = 'ca', cb) {
-      http.get(`${apiUrl}/top-headlines?country=${country}&apiKey=${apiKey}`);
+      http.get(`${apiUrl}/top-headlines?country=${country}&apiKey=${apiKey}`, cb);
     },
     everything(query, cb) {
-      http.get(`${apiUrl}/everything?q=${query}&apiKey=${apiKey}`);
+      http.get(`${apiUrl}/everything?q=${query}&apiKey=${apiKey}`, cb);
     },
   }
 })();
