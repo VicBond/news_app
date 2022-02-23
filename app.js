@@ -71,6 +71,14 @@ const newsService = (function(){
   }
 })();
 
+//elements 
+const form = document.forms['newsControls'];
+const countrySelect = form.elements['country'];
+const searchInput = form.elements['search'];
+
+
+
+
 //  init selects
 document.addEventListener('DOMContentLoaded', function() {
   M.AutoInit();
